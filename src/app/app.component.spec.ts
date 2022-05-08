@@ -16,16 +16,16 @@ describe('AppComponent', () => {
     expect(app).toBeTruthy();
   });
 
-  it(`should have as title 'FE0122A-progetto-settimana10'`, () => {
+  it(`should have as title 'FE0222A-progetto-settimana-10'`, () => {
     const fixture = TestBed.createComponent(AppComponent);
     const app = fixture.componentInstance;
-    expect(app.title).toEqual('FE0122A-progetto-settimana10');
+    expect(app.title).toEqual('FE0222A-progetto-settimana-10');
   });
 
   it('should render title', () => {
     const fixture = TestBed.createComponent(AppComponent);
     fixture.detectChanges();
     const compiled = fixture.nativeElement as HTMLElement;
-    expect(compiled.querySelector('.content span')?.textContent).toContain('FE0122A-progetto-settimana10 app is running!');
+    expect(compiled.querySelector('.content span')?.textContent).toContain('FE0222A-progetto-settimana-10 app is running!');
   });
 });

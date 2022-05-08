@@ -1,0 +1,19 @@
+<div class="container mt-3" style="background-color: rgb(199, 242, 245);">
+  <h1 class="text-center my-2">To Do</h1>
+  <h4 class="text-center" *ngIf="!loaded">Recupero task...</h4>
+  <h4 class="text-center" *ngIf="listaTasks.length==0"> Non ci sono tasks</h4>
+    <div class="input-group mb-3" *ngIf="loaded">
+      <input type="text" class="form-control" placeholder="Inserisci task" (input)="getTitolo($event)" aria-label="task" aria-describedby="button-addon2">
+      <button class="btn btn-outline-secondary" type="button" id="button-addon2" (click)="addTask()">Aggiungi</button>
+    </div>
+    <h2 class="text-center" *ngIf="listaTasks.length>0">Tasks:</h2>
+    <ul class="list-unstyled">
+        <ng-container *ngFor="let item of listaTasks">
+        <li class="list-group-item shadow" *ngIf="!item.isCompleted">-{{item.titolo}}
+          <button type="button" class="btn btn-sm btn-success mx-3" (click)="completato(item.id)"><i class="bi bi-check2-square"></i> </button>
+          <button type="button" class="btn btn-sm btn-danger" (click)="getIdElimina(item.id) ; deleteTask()"><i class="bi bi-x-square"> </i></button>
+          <li>
+        </ng-container>
+        <li class="list-group-item text-danger" *ngIf="eliminazione">Eliminazione in corso...</li>
+    </ul>
+</div>
