@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Task } from 'src/app/interface/task';
-import { getTaskList } from 'src/app/service/todos.service';
+import { getTaskList, deleteTask } from 'src/app/service/todos.service';
+
 
 @Component({
   selector: 'app-completed',
@@ -21,6 +22,9 @@ export class CompletedComponent implements OnInit {
       this.numCompletati=this.completati.length
     })
   }
+
+
+
   ngOnInit(): void {
   }
 

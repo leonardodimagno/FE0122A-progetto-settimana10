@@ -9,8 +9,8 @@ import { Task } from 'src/app/interface/task';
 export class TodoComponent implements OnInit {
   loaded:boolean=false;
   listaTasks!:Task[];
-  titolo:string="test"
   idElimina:number=100
+  titolo:string="test"
   eliminazione:boolean=false;
   oops:boolean=false;
 
@@ -22,15 +22,14 @@ export class TodoComponent implements OnInit {
       this.loaded=true;
       console.log(this.listaTasks)})
   }
-  getTitolo(event:Event){
+  prendiTitolo(event:Event){
     const target = <HTMLInputElement>event.target;
     this.titolo= target.value;
     console.log(this.titolo)
   }
-  addTask(){
+  aggiungiTask(){
     addTask(this.titolo).then(lista => {
     this.listaTasks=<Task[]>lista;
-    console.log(this.listaTasks)
   })
   }
 completato(identifier:any){
@@ -41,7 +40,7 @@ completato(identifier:any){
   getIdElimina(id:number){
     this.idElimina=id
   }
-  deleteTask(){
+  cancellaTask(){
     this.eliminazione=true
     deleteTask(this.idElimina).then(lista => {
         this.listaTasks=<Task[]>lista;
