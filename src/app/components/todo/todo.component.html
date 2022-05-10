@@ -12,7 +12,7 @@
         <li class="list-group-item shadow" *ngIf="!item.isCompleted">-{{item.titolo}}
           <button type="button" class="btn btn-sm btn-success mx-3" (click)="completato(item.id)"><i class="bi bi-check2-square"></i> </button>
           <button type="button" class="btn btn-sm btn-danger" (click)="getIdElimina(item.id) ; cancellaTask()"><i class="bi bi-x-square"> </i></button>
-          <li>
+        <li>
         </ng-container>
         <li class="list-group-item text-danger" *ngIf="eliminazione">Eliminazione in corso...</li>
     </ul>
